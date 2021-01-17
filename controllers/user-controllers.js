@@ -1,3 +1,4 @@
+/* eslint-disable node/no-unsupported-features/es-syntax */
 const fs = require('fs');
 
 const users = JSON.parse(
