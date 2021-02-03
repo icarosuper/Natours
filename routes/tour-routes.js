@@ -8,6 +8,14 @@ router
 	.get(tourCon.topTours, tourCon.getAllTours);
 
 router
+	.route('/tour-stats')
+	.get(tourCon.getTourStats);
+
+router
+	.route('/monthly-plan/:year')
+	.get(tourCon.getMonthlyPlan);
+
+router
 	.route('/')
 	.get(tourCon.getAllTours)
 	.post(tourCon.addTour);

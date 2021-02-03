@@ -1,7 +1,7 @@
 const fs = require('fs');
 const mongoose = require('mongoose');
 const env = require('dotenv');
-const Tour = require('../../models/tour-models');
+const Tour = require('../../models/tour-model');
 
 env.config({ path: './config.env' });
 
