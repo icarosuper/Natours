@@ -1,53 +1,31 @@
-const fs = require('fs');
 const Tour = require('../models/tour-models');
+const APIFeatures = require('../Utils/apiFeatures');
 
 exports.topTours = async (req, res, next) => {
 	req.query.limit = '5';
 	req.query.sort = '-ratingsAverage,price';
 	req.query.fields = 'name,price,ratingsAverage,summary,difficulty';
 	next();
-}
+};
 
 exports.getAllTours = async (req, res) => {
 	try {
-		const query = { ...req.query };
-		['page', 'sort', 'limit', 'fields'].forEach((el) => {
-			delete query[el];
-		});
-
-		let tours = Tour.find(query);
-
-		if (req.query.sort)
-			tours = tours.sort(req.query.sort.split(',').join(' '));
-		else tours = tours.sort('-createdAt');
-
-		if (req.query.fields)
-			tours = tours.select(req.query.fields.split(',').join(' '));
-		else tours = tours.select('-__v');
-
-		const page = req.query.page * 1 || 1;
-		const limit = req.query.limit * 1 || 50;
-		const skip = (page - 1) * limit;
-
-		tours = tours.skip(skip).limit(limit);
-
-		if(req.query.page && skip >= await Tour.countDocuments())
-			throw new Error('Essa página não existe');
-
-		tours = await tours;
+		const features = new APIFeatures(Tour.find(), req.query)
+			.filter().sort().limitFields().paginate();
+		const tours = await features.query;
 
 		res.status(200).json({
 			status: 'success',
 			requestedAt: req.requestTime,
 			results: tours.length,
 			data: {
-				tours,
-			},
+				tours
+			}
 		});
 	} catch (err) {
 		res.status(404).json({
 			status: 'fail',
-			message: err.message,
+			message: err.message
 		});
 	}
 };
@@ -60,13 +38,13 @@ exports.getTour = async (req, res) => {
 			status: 'success',
 			requestedAt: req.requestTime,
 			data: {
-				selectedTour,
-			},
+				selectedTour
+			}
 		});
 	} catch (err) {
 		res.status(404).json({
 			status: 'fail',
-			message: err.message,
+			message: err.message
 		});
 	}
 };
@@ -74,18 +52,15 @@ exports.getTour = async (req, res) => {
 exports.addTour = async (req, res) => {
 	try {
 		const newTour = await Tour.create(req.body);
-		console.log(Tour, newTour).require(() => {
-			return Sum(number, file);
-		});
 
 		res.status(201).json({
 			status: 'success',
-			data: { tour: newTour },
+			data: { tour: newTour }
 		});
 	} catch (err) {
 		res.status(400).json({
 			status: 'fail',
-			message: err.message,
+			message: err.message
 		});
 	}
 };
@@ -96,7 +71,7 @@ exports.updateTour = async (req, res) => {
 			req.params.id,
 			req.body,
 			{
-				new: true,
+				new: true
 			}
 		);
 
@@ -104,13 +79,13 @@ exports.updateTour = async (req, res) => {
 			status: 'success',
 			requestedAt: req.requestTime,
 			data: {
-				tour,
-			},
+				tour
+			}
 		});
 	} catch (err) {
 		res.status(400).json({
 			status: 'fail',
-			message: err.message,
+			message: err.message
 		});
 	}
 };
@@ -122,12 +97,12 @@ exports.deleteTour = async (req, res) => {
 		res.status(204).json({
 			status: 'success',
 			requestedAt: req.requestTime,
-			data: null,
+			data: null
 		});
 	} catch (err) {
 		res.status(400).json({
 			status: 'fail',
-			message: err.message,
+			message: err.message
 		});
 	}
 };
