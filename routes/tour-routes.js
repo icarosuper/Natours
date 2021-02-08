@@ -4,26 +4,14 @@ const tourCon = require('../controllers/tour-controllers');
 const router = express.Router();
 
 router
-	.route('/top-tours')
-	.get(tourCon.topTours, tourCon.getAllTours);
-
-router
-	.route('/tour-stats')
-	.get(tourCon.getTourStats);
-
-router
-	.route('/monthly-plan/:year')
-	.get(tourCon.getMonthlyPlan);
-
-router
-	.route('/')
-	.get(tourCon.getAllTours)
-	.post(tourCon.addTour);
-
-router
-	.route('/:id')
-	.get(tourCon.getTour)
-	.patch(tourCon.updateTour)
-	.delete(tourCon.deleteTour);
+	.get('/', tourCon.getAllTours)
+	.post('/', tourCon.addTour)
+	.get('/top-tours', tourCon.topTours, tourCon.getAllTours)
+	.get('/tour-stats', tourCon.getTourStats)
+	.get('/monthly-plan/:year', tourCon.getMonthlyPlan)
+	.get('/:id', tourCon.getTour)
+	.patch('/:id', tourCon.updateTour)
+	.delete('/:id', tourCon.deleteTour);
+//rotas com id tem que estar em baixo
 
 module.exports = router;

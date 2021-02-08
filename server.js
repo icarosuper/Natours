@@ -7,17 +7,20 @@ const app = require('./app');
 
 const DB = process.env.DATABASE;
 
-mongoose
-	.connect(DB, {
-		useNewUrlParser: true,
-		useCreateIndex: true,
-		useFindAndModify: false,
-	})
-	.then(() => {
-		console.log('Conexão feita com sucesso!');
-	});
+(async () => {
+	try {
+		await mongoose.connect(DB, {
+			useNewUrlParser: true,
+			useUnifiedTopology: true,
+			useCreateIndex: true,
+			useFindAndModify: false
+		});
 
-const port = process.env.PORT || 3000;
-app.listen(port, () => {
-	console.log(`App rodando na porta ${port}`);
-});
+		const port = process.env.PORT || 3000;
+		app.listen(port, () => {
+			console.log(`App rodando na porta ${port}`);
+		});
+	} catch (err) {
+		console.log(err.message);
+	}
+})();
