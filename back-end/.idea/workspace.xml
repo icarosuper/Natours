@@ -2,15 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="9dd17f17-adbd-4e44-84f4-96454e278199" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/Utils/appError.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Utils/globalCatch.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/controllers/errorController.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/app.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/controllers/tour-controllers.js" beforeDir="false" afterPath="$PROJECT_DIR$/controllers/tour-controller.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/controllers/user-controllers.js" beforeDir="false" afterPath="$PROJECT_DIR$/controllers/user-controller.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/tour-routes.js" beforeDir="false" afterPath="$PROJECT_DIR$/routes/tour-routes.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/user-routes.js" beforeDir="false" afterPath="$PROJECT_DIR$/routes/user-routes.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -90,8 +82,16 @@
       <workItem from="1612828883493" duration="594000" />
       <workItem from="1612890649040" duration="1734000" />
       <workItem from="1612912188904" duration="680000" />
-      <workItem from="1612969867363" duration="3823000" />
+      <workItem from="1612969867363" duration="4683000" />
     </task>
+    <task id="LOCAL-00001" summary="Error handler global criado e blocos try-catch removidos">
+      <created>1612983026173</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1612983026173</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -108,5 +108,9 @@
       </map>
     </option>
     <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Error handler global criado e blocos try-catch removidos" />
+    <option name="LAST_COMMIT_MESSAGE" value="Error handler global criado e blocos try-catch removidos" />
   </component>
 </project>
