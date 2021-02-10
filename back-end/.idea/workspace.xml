@@ -1,9 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="9dd17f17-adbd-4e44-84f4-96454e278199" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-    </list>
+    <list default="true" id="9dd17f17-adbd-4e44-84f4-96454e278199" name="Default Changelist" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -82,7 +80,7 @@
       <workItem from="1612828883493" duration="594000" />
       <workItem from="1612890649040" duration="1734000" />
       <workItem from="1612912188904" duration="680000" />
-      <workItem from="1612969867363" duration="4683000" />
+      <workItem from="1612969867363" duration="5412000" />
     </task>
     <task id="LOCAL-00001" summary="Error handler global criado e blocos try-catch removidos">
       <created>1612983026173</created>
@@ -91,7 +89,14 @@
       <option name="project" value="LOCAL" />
       <updated>1612983026173</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Arquivo workspace atualizado">
+      <created>1612983750539</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1612983750539</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -111,6 +116,7 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Error handler global criado e blocos try-catch removidos" />
-    <option name="LAST_COMMIT_MESSAGE" value="Error handler global criado e blocos try-catch removidos" />
+    <MESSAGE value="Arquivo workspace atualizado" />
+    <option name="LAST_COMMIT_MESSAGE" value="Arquivo workspace atualizado" />
   </component>
 </project>
