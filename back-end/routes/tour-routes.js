@@ -1,5 +1,5 @@
 const express = require('express');
-const tourCon = require('../controllers/tour-controllers');
+const tourCon = require('../controllers/tour-controller');
 
 const router = express.Router();
 
@@ -12,6 +12,6 @@ router
 	.get('/:id', tourCon.getTour)
 	.patch('/:id', tourCon.updateTour)
 	.delete('/:id', tourCon.deleteTour);
-//rotas com id tem que estar em baixo
+//rotas com :id tem que estar em baixo
 
 module.exports = router;
